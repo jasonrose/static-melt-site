@@ -1,0 +1,43 @@
+{
+  "name": "static-melt-site",
+  "version": "0.0.0",
+  "description": "Static melt site",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all --sequential clean make-dirs --parallel stylus-prod pug-prod",
+    "clean": "rimraf ./build",
+    "deploy": "gulp deploy",
+    "live-server": "live-server ./build/tmp --port=3456 --wait=1000",
+    "make-dirs": "mkdirp build/tmp build/.tmp",
+    "make-files": "copy index.html ./build/tmp",
+    "pug": "pug src/index.pug --out ./build/tmp",
+    "pug-dev": "npm run pug -- --watch --pretty",
+    "pug-prod": "npm run pug -- --no-debug",
+    "start": "npm-run-all --sequential clean make-dirs make-files --parallel stylus-dev pug-dev live-server",
+    "stylus": "stylus -u autoprefixer-stylus --with \"{ browsers: ['last 2 versions'] }\" --out ./build/tmp/app.css ./src/app.styl",
+    "stylus-dev": "npm run stylus -- --watch",
+    "stylus-prod": "npm run stylus -- --compress",
+    "zzz": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonrose/static-melt-site.git"
+  },
+  "author": "Jason Rose",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonrose/static-melt-site/issues"
+  },
+  "homepage": "https://github.com/jasonrose/static-melt-site",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.9.4",
+    "copy": "^0.3.0",
+    "gh-pages": "^0.11.0",
+    "live-server": "1.1.0",
+    "mkdirp": "0.5.1",
+    "npm-run-all": "3.0.0",
+    "pug-cli": "1.0.0-alpha6",
+    "rimraf": "2.5.4",
+    "stylus": "0.54.5"
+  }
+}
