@@ -1,0 +1,6 @@
+{
+  "title": "This has a reference to a thing in directory1",
+  "something": [
+    "Thing 1"
+  ]
+}

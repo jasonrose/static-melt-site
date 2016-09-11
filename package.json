@@ -11,7 +11,7 @@
     "make-dirs": "mkdirp build",
     "make-files": "copy index.html ./build",
     "predeploy": "npm run build",
-    "pug": "pug src/index.pug --out ./build",
+    "pug": "pug --obj data.js src/index.pug --out ./build",
     "pug-dev": "npm run pug -- --watch --pretty",
     "pug-prod": "npm run pug -- --no-debug",
     "start": "npm-run-all --sequential clean make-dirs make-files --parallel stylus-dev pug-dev live-server",
@@ -37,6 +37,7 @@
     "mkdirp": "0.5.1",
     "npm-run-all": "3.0.0",
     "pug-cli": "1.0.0-alpha6",
+    "require-directory": "2.1.1",
     "rimraf": "2.5.4",
     "stylus": "0.54.5"
   }

@@ -5,4 +5,9 @@ html(lang='en')
         link(rel='stylesheet', href='app.css', media='all')
 
     body
-        p hello2
+        each val in data.directory2
+            div
+                h1=val.title
+                each thing in val.something
+                    div=thing.title
+                    div=thing.snippet
