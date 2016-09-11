@@ -30,6 +30,4 @@ for (var dir2Key in data.directory2) {
   }
 }
 
-console.log(output);
-
 exports.data = output;
