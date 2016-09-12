@@ -15,7 +15,7 @@
     "pug-dev": "npm run pug -- --pretty",
     "pug-prod": "npm run pug -- --no-debug",
     "start": "npm-run-all --sequential clean make-dirs make-files --parallel stylus-dev pug-dev watch-compile live-server",
-    "stylus": "stylus -u autoprefixer-stylus --with \"{ browsers: ['last 2 versions'] }\" --out ./build/app.css ./src/app.styl",
+    "stylus": "stylus -u autoprefixer-stylus --with \"{ browsers: ['last 2 versions'] }\" --include-css --out ./build/app.css ./src/app.styl",
     "stylus-dev": "npm run stylus -- --watch",
     "stylus-prod": "npm run stylus -- --compress",
     "watch-compile": "watchcompile"
